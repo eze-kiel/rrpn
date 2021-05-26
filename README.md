@@ -2,6 +2,14 @@
 
 Rust RPN Calculator
 
+## Installation
+
+```
+$ git clone https://github.com/eze-kiel/rrpn.git
+$ cd rrpn/
+$ cargo build --release
+```
+
 ## Usage
 
 ```
