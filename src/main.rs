@@ -1,8 +1,15 @@
+use std::env;
 use text_io::read;
 mod ops;
 
 fn main() {
     banner();
+
+    let args: Vec<String> = env::args().collect();
+    if args.len() > 1 {
+        ops::help();
+        ops::quit();
+    }
 
     let mut stack: Vec<f64> = Vec::new();
     loop {
