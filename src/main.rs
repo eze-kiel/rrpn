@@ -11,9 +11,14 @@ fn main() {
         match &line[..] {
             "+" | "add" => ops::add(&mut stack),
             "-" | "sub" => ops::sub(&mut stack),
+            "*" | "mul" => ops::mul(&mut stack),
+            "/" | "div" => ops::div(&mut stack),
             "sum" => ops::sum(&mut stack),
+            "mean" => ops::mean(&mut stack),
+            "c" | "clear" => ops::clear(&mut stack),
             "d" | "drop" => ops::drop(&mut stack),
             "q" | "quit" => ops::quit(),
+            "?" | "h" | "help" => ops::help(),
             _ => {
                 let f = line.parse::<f64>().unwrap();
                 stack.push(f);
