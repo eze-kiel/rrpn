@@ -7,7 +7,6 @@ fn main() {
     let mut stack: Vec<f64> = Vec::new();
     loop {
         let line: String = read!("{}\n");
-
         match &line[..] {
             "+" | "add" => ops::add(&mut stack),
             "-" | "sub" => ops::sub(&mut stack),
@@ -15,6 +14,7 @@ fn main() {
             "/" | "div" => ops::div(&mut stack),
             "sum" => ops::sum(&mut stack),
             "mean" => ops::mean(&mut stack),
+            "swap" => ops::swap(&mut stack),
             "c" | "clear" => ops::clear(&mut stack),
             "d" | "drop" => ops::drop(&mut stack),
             "q" | "quit" => ops::quit(),

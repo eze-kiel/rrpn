@@ -64,6 +64,16 @@ pub fn mean(s: &mut Vec<f64>) {
     }
 }
 
+pub fn swap(s: &mut Vec<f64>) {
+    if s.len() >= 2 {
+        let f1 = s.pop().unwrap();
+        let f2 = s.pop().unwrap();
+        s.push(f1);
+        s.push(f2);
+        println!("\top: swap");
+    }
+}
+
 pub fn clear(s: &mut Vec<f64>) {
     s.clear();
     println!("\top: clear")
