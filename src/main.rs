@@ -9,7 +9,8 @@ fn main() {
         let line: String = read!("{}\n");
 
         match &line[..] {
-            "+" => ops::add(&mut stack),
+            "+" | "add" => ops::add(&mut stack),
+            "-" | "sub" => ops::sub(&mut stack),
             _ => {
                 let f = line.parse::<f64>().unwrap();
                 stack.push(f);
