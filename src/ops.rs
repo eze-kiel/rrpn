@@ -30,6 +30,13 @@ pub fn sum(s: &mut Vec<f64>) {
     }
 }
 
+pub fn drop(s: &mut Vec<f64>) {
+    if s.len() >= 1 {
+        s.pop();
+        println!("\top: drop");
+    }
+}
+
 pub fn quit() {
     std::process::exit(0)
 }

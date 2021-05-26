@@ -12,6 +12,7 @@ fn main() {
             "+" | "add" => ops::add(&mut stack),
             "-" | "sub" => ops::sub(&mut stack),
             "sum" => ops::sum(&mut stack),
+            "d" | "drop" => ops::drop(&mut stack),
             "q" | "quit" => ops::quit(),
             _ => {
                 let f = line.parse::<f64>().unwrap();
