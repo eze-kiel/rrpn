@@ -11,6 +11,7 @@ fn main() {
         match &line[..] {
             "+" | "add" => ops::add(&mut stack),
             "-" | "sub" => ops::sub(&mut stack),
+            "q" | "quit" => ops::quit(),
             _ => {
                 let f = line.parse::<f64>().unwrap();
                 stack.push(f);

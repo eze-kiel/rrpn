@@ -17,3 +17,7 @@ pub fn sub(s: &mut Vec<f64>) {
         s.push(res)
     }
 }
+
+pub fn quit() {
+    std::process::exit(0)
+}
