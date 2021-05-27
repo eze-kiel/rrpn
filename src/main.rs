@@ -1,4 +1,5 @@
 use std::env;
+use std::io::{self, Write};
 use text_io::read;
 mod ops;
 
@@ -13,6 +14,8 @@ fn main() {
 
     let mut stack: Vec<f64> = Vec::new();
     loop {
+        print!("rrpn> ");
+        io::stdout().flush().unwrap();
         let line: String = read!("{}\n");
         match &line[..] {
             "+" | "add" => ops::add(&mut stack),
@@ -44,8 +47,8 @@ fn banner() {
 }
 
 fn display_stack(s: &mut Vec<f64>) {
-    println!("\t== STACK ==");
+    println!("\t\t== STACK ==");
     for item in s {
-        println!("\t{}", item);
+        println!("\t\t{}", item);
     }
 }
