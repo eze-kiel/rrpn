@@ -24,6 +24,7 @@ $ cargo build --release
 *, mul     : multiply the last 2 values of the stack
 /, div     : divide the last 2 values of the stack
 sum        : sum the stack
+%, mod     : modullo on the last 2 values of the stack
 mean       : calculate the mean value of the stack
 swap       : swap the last 2 values of the stack
 c, clear   : clear the stack
