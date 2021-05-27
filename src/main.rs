@@ -29,7 +29,7 @@ fn main() {
                 "^" | "pow" => ops::pow(&mut stack),
                 "%" | "mod" => ops::modulo(&mut stack),
                 "sin" => ops::sin(&mut stack),
-                "cos" => ops::sin(&mut stack),
+                "cos" => ops::cos(&mut stack),
                 "sum" => ops::sum(&mut stack),
                 "mean" => ops::mean(&mut stack),
                 "swap" => ops::swap(&mut stack),
