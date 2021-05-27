@@ -1,3 +1,5 @@
+use ansi_term::Color;
+use ansi_term::Style;
 use std::env;
 use std::io::{self, Write};
 use text_io::read;
@@ -14,7 +16,7 @@ fn main() {
 
     let mut stack: Vec<f64> = Vec::new();
     loop {
-        print!("rrpn> ");
+        print!("{}> ", Color::Cyan.paint("rrpn"));
         io::stdout().flush().unwrap();
         let line: String = read!("{}\n");
         let split = line.split(" ");
@@ -37,6 +39,7 @@ fn main() {
                 "d" | "drop" => ops::drop(&mut stack),
                 "q" | "quit" => ops::quit(),
                 "?" | "h" | "help" => ops::help(),
+                "" => {}
                 _ => {
                     let f = item.parse::<f64>();
                     let _f = match f {
@@ -55,7 +58,7 @@ fn banner() {
 }
 
 fn display_stack(s: &mut Vec<f64>) {
-    println!("\t\t== STACK ==");
+    println!("\t\t{}", Style::new().bold().paint("=== STACK ==="));
     for item in s {
         println!("\t\t{}", item);
     }
