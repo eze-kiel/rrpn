@@ -15,6 +15,7 @@ Rust RPN Calculator
 -, sub     : substract the last 2 values of the stack
 *, mul     : multiply the last 2 values of the stack
 /, div     : divide the last 2 values of the stack
+^, pow     : do a power between the 2 values of the stack
 sum        : sum the stack
 mean       : calculate the mean value of the stack
 swap       : swap the last 2 values of the stack

@@ -26,6 +26,7 @@ fn main() {
                 "-" | "sub" => ops::sub(&mut stack),
                 "*" | "mul" => ops::mul(&mut stack),
                 "/" | "div" => ops::div(&mut stack),
+                "^" | "pow" => ops::pow(&mut stack),
                 "sum" => ops::sum(&mut stack),
                 "%" | "mod" => ops::modulo(&mut stack),
                 "mean" => ops::mean(&mut stack),

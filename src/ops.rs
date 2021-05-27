@@ -38,6 +38,16 @@ pub fn div(s: &mut Vec<f64>) {
     }
 }
 
+pub fn pow(s: &mut Vec<f64>) {
+    if s.len() >= 2 {
+        let f1 = s.pop().unwrap();
+        let f2 = s.pop().unwrap();
+        let res = f1.powf(f2);
+        s.push(res);
+        println!("\t\top: {} ^ {}", f1, f2);
+    }
+}
+
 pub fn sum(s: &mut Vec<f64>) {
     if s.len() >= 2 {
         let mut res: f64 = 0.0;
