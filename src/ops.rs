@@ -4,7 +4,7 @@ pub fn add(s: &mut Vec<f64>) {
         let f2 = s.pop().unwrap();
         let res = f1 + f2;
         s.push(res);
-        println!("\top: {} + {}", f1, f2);
+        println!("\t\top: {} + {}", f1, f2);
     }
 }
 
@@ -14,7 +14,7 @@ pub fn sub(s: &mut Vec<f64>) {
         let f2 = s.pop().unwrap();
         let res = f1 - f2;
         s.push(res);
-        println!("\top: {} - {}", f1, f2);
+        println!("\t\top: {} - {}", f1, f2);
     }
 }
 
@@ -24,7 +24,7 @@ pub fn mul(s: &mut Vec<f64>) {
         let f2 = s.pop().unwrap();
         let res = f1 * f2;
         s.push(res);
-        println!("\top: {} * {}", f1, f2);
+        println!("\t\top: {} * {}", f1, f2);
     }
 }
 
@@ -34,7 +34,7 @@ pub fn div(s: &mut Vec<f64>) {
         let f2 = s.pop().unwrap();
         let res = f1 / f2;
         s.push(res);
-        println!("\top: {} / {}", f1, f2);
+        println!("\t\top: {} / {}", f1, f2);
     }
 }
 
@@ -46,7 +46,17 @@ pub fn sum(s: &mut Vec<f64>) {
         }
         s.clear();
         s.push(res);
-        println!("\top: sum")
+        println!("\t\top: sum")
+    }
+}
+
+pub fn modulo(s: &mut Vec<f64>) {
+    if s.len() >= 2 {
+        let f1 = s.pop().unwrap();
+        let f2 = s.pop().unwrap();
+        let res = f1 % f2;
+        s.push(res);
+        println!("\t\top: {} % {}", f1, f2);
     }
 }
 
@@ -60,7 +70,7 @@ pub fn mean(s: &mut Vec<f64>) {
         res = res / div;
         s.clear();
         s.push(res);
-        println!("\top: mean");
+        println!("\t\top: mean");
     }
 }
 
@@ -70,19 +80,19 @@ pub fn swap(s: &mut Vec<f64>) {
         let f2 = s.pop().unwrap();
         s.push(f1);
         s.push(f2);
-        println!("\top: swap");
+        println!("\t\top: swap");
     }
 }
 
 pub fn clear(s: &mut Vec<f64>) {
     s.clear();
-    println!("\top: clear")
+    println!("\t\top: clear")
 }
 
 pub fn drop(s: &mut Vec<f64>) {
     if s.len() >= 1 {
-        s.pop();
-        println!("\top: drop");
+        let val = s.pop().unwrap();
+        println!("\t\top: drop {}", val);
     }
 }
 

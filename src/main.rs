@@ -1,4 +1,5 @@
 use std::env;
+use std::io::{self, Write};
 use text_io::read;
 mod ops;
 
@@ -13,6 +14,8 @@ fn main() {
 
     let mut stack: Vec<f64> = Vec::new();
     loop {
+        print!("rrpn> ");
+        io::stdout().flush().unwrap();
         let line: String = read!("{}\n");
         match &line[..] {
             "+" | "add" => ops::add(&mut stack),
@@ -20,6 +23,7 @@ fn main() {
             "*" | "mul" => ops::mul(&mut stack),
             "/" | "div" => ops::div(&mut stack),
             "sum" => ops::sum(&mut stack),
+            "%" | "mod" => ops::modulo(&mut stack),
             "mean" => ops::mean(&mut stack),
             "swap" => ops::swap(&mut stack),
             "c" | "clear" => ops::clear(&mut stack),
@@ -27,8 +31,11 @@ fn main() {
             "q" | "quit" => ops::quit(),
             "?" | "h" | "help" => ops::help(),
             _ => {
-                let f = line.parse::<f64>().unwrap();
-                stack.push(f);
+                let f = line.parse::<f64>();
+                let _f = match f {
+                    Ok(float) => stack.push(float),
+                    Err(_error) => println!("operation not recognised"),
+                };
             }
         }
         display_stack(&mut stack)
@@ -40,8 +47,8 @@ fn banner() {
 }
 
 fn display_stack(s: &mut Vec<f64>) {
-    println!("\t== STACK ==");
+    println!("\t\t== STACK ==");
     for item in s {
-        println!("\t{}", item);
+        println!("\t\t{}", item);
     }
 }
