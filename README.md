@@ -19,10 +19,18 @@ $ cargo build --release
 ## Commands
 
 ```
+== Basic operations
 +, add     : add the last 2 valutes of the stack
 -, sub     : substract the last 2 values of the stack
 *, mul     : multiply the last 2 values of the stack
 /, div     : divide the last 2 values of the stack
+^, pow     : do a power between the 2 values of the stack
+
+== Trigonometry
+sin        : calculate the sinus of the last value
+cos        : calculate the cosinus of the last value
+
+== Misc
 sum        : sum the stack
 %, mod     : modullo on the last 2 values of the stack
 mean       : calculate the mean value of the stack

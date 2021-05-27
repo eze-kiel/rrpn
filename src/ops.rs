@@ -38,6 +38,34 @@ pub fn div(s: &mut Vec<f64>) {
     }
 }
 
+pub fn pow(s: &mut Vec<f64>) {
+    if s.len() >= 2 {
+        let f1 = s.pop().unwrap();
+        let f2 = s.pop().unwrap();
+        let res = f1.powf(f2);
+        s.push(res);
+        println!("\t\top: {} ^ {}", f1, f2);
+    }
+}
+
+pub fn sin(s: &mut Vec<f64>) {
+    if s.len() >= 1 {
+        let f = s.pop().unwrap();
+        let res = f.sin();
+        s.push(res);
+        println!("\t\top: sin({})", f);
+    }
+}
+
+pub fn cos(s: &mut Vec<f64>) {
+    if s.len() >= 1 {
+        let f = s.pop().unwrap();
+        let res = f.cos();
+        s.push(res);
+        println!("\t\top: cos({})", f);
+    }
+}
+
 pub fn sum(s: &mut Vec<f64>) {
     if s.len() >= 2 {
         let mut res: f64 = 0.0;
@@ -105,10 +133,18 @@ pub fn help() {
         "
 == Help ==
 
+== Basic operations
 +, add     : add the last 2 valutes of the stack
 -, sub     : substract the last 2 values of the stack
 *, mul     : multiply the last 2 values of the stack
 /, div     : divide the last 2 values of the stack
+^, pow     : do a power between the 2 values of the stack
+
+== Trigonometry
+sin        : calculate the sinus of the last value
+cos        : calculate the cosinus of the last value
+
+== Misc
 sum        : sum the stack
 mean       : calculate the mean value of the stack
 swap       : swap the last 2 values of the stack
