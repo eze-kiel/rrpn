@@ -66,6 +66,14 @@ pub fn cos(s: &mut Vec<f64>) {
     }
 }
 
+pub fn pi(s: &mut Vec<f64>) {
+    s.push(std::f64::consts::PI)
+}
+
+pub fn e(s: &mut Vec<f64>) {
+    s.push(std::f64::consts::E)
+}
+
 pub fn sum(s: &mut Vec<f64>) {
     if s.len() >= 2 {
         let mut res: f64 = 0.0;
@@ -143,6 +151,10 @@ pub fn help() {
 == Trigonometry
 sin        : calculate the sinus of the last value
 cos        : calculate the cosinus of the last value
+
+== Variables
+pi         : push pi to the stack
+e          : push e to the stack
 
 == Misc
 sum        : sum the stack

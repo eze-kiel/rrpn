@@ -30,6 +30,8 @@ fn main() {
                 "/" | "div" => ops::div(&mut stack),
                 "^" | "pow" => ops::pow(&mut stack),
                 "%" | "mod" => ops::modulo(&mut stack),
+                "pi" => ops::pi(&mut stack),
+                "e" => ops::e(&mut stack),
                 "sin" => ops::sin(&mut stack),
                 "cos" => ops::cos(&mut stack),
                 "sum" => ops::sum(&mut stack),

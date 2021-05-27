@@ -30,9 +30,12 @@ $ cargo build --release
 sin        : calculate the sinus of the last value
 cos        : calculate the cosinus of the last value
 
+== Variables
+pi         : push pi to the stack
+e          : push e to the stack
+
 == Misc
 sum        : sum the stack
-%, mod     : modullo on the last 2 values of the stack
 mean       : calculate the mean value of the stack
 swap       : swap the last 2 values of the stack
 c, clear   : clear the stack
