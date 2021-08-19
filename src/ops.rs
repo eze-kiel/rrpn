@@ -32,7 +32,7 @@ pub fn div(s: &mut Vec<f64>) {
     if s.len() >= 2 {
         let f1 = s.pop().unwrap();
         let f2 = s.pop().unwrap();
-        let res = f1 / f2;
+        let res = f2 / f1;
         s.push(res);
         println!("\t\top: {} / {}", f1, f2);
     }
@@ -42,7 +42,7 @@ pub fn pow(s: &mut Vec<f64>) {
     if s.len() >= 2 {
         let f1 = s.pop().unwrap();
         let f2 = s.pop().unwrap();
-        let res = f1.powf(f2);
+        let res = f2.powf(f1);
         s.push(res);
         println!("\t\top: {} ^ {}", f1, f2);
     }
